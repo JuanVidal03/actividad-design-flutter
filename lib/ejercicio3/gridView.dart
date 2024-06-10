@@ -2,6 +2,11 @@
 
 import 'package:flutter/material.dart';
 
+// importar vistas
+import 'package:design_app_flutter/ejercicio3/views/citasMedicas.dart';
+import 'package:design_app_flutter/ejercicio3/views/urgencias.dart';
+
+
 Widget gridView(BuildContext context) {
   return GridView.count(
     primary: false,
@@ -37,45 +42,7 @@ Widget gridView(BuildContext context) {
   ));
 }
 
-
-// vitas de citas medicas
-class CitasMedicas extends StatelessWidget {
-  const CitasMedicas({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Citas Medicas')
-      ),
-      body: Center(
-        child: Text('Contenido de las citas medicas'),
-      ),
-    );
-  }
-}
-
-
-
-class Urgencias extends StatelessWidget {
-  const Urgencias({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Urgencias')
-      ),
-      body: Center(
-        child: Text('Contenido de las urgencias'),
-      ),
-    );
-  }
-}
-
-
-
-
+// manejando la navegacion de la aplicacion
 Widget navegacion(int index) {
   switch (items[index]['title'].toLowerCase()) {
     case 'citas medicas':
@@ -88,9 +55,6 @@ Widget navegacion(int index) {
       return Text('Unknown Screen');
   }
 }
-
-
-
 
 
 /// list map con los items del menu
